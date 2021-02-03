@@ -698,7 +698,7 @@ class TestResponse implements ArrayAccess
             return $this;
         }
 
-        $errors = Arr::get($json, $responseKey);
+        $errors = Arr::get($json, $responseKey, []);
 
         if (is_null($keys) && count($errors) > 0) {
             PHPUnit::fail(
